@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MixTape - Musica para ti</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:5000">
+        <img src="https://cdn-icons-png.flaticon.com/512/2285/2285980.png" width="30" height="30"
+             class="d-inline-block align-top" alt="">
+        MixTape</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:5000">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/templates/funciones">Funciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:5000/templates/equipo">Equipo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.uce.edu.ec/">Documentación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.uce.edu.ec/">Contacto</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h1 class="display-4">Necesitamos tu ayuda</h1>
+                <p class="lead">Te gustó la recomendación?</p>
+            </div>
+            <div class="container mt-5">
+                <form method="POST" action="{{ url_for('registrar_pregunta') }}">
+                    <div class="form-group">
+                        <label>Elige una opción, por favor:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="selected_option" id="option1" value="1">
+                            <label class="form-check-label" for="option1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="selected_option" id="option2" value="0">
+                            <label class="form-check-label" for="option2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                    <button href="http://localhost:5000" type="submit" class="btn btn-primary" >Adelante!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br class="my-2">
+    <br class="my-2">
+    <div class="container">
+        <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/{{ id_playlist_reproduccion_retro }}" width="100%"
+                height="700" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-7s3q1sU3kuv9vwpEC9S3/z3qO3ZG1jzFmdQ4w7dJhRmOnM9lvCI0/jGkwNWP+25Z2QDZ47gMXF/YwKw5b/61Pw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
+        integrity="sha512-PFtJq3qih1EiI1Lc2tgw4dP4JlRopLMln9JUQrZMvl7ZCmRZuVJvO8YwW6mKhU6bCkA9/9J75MLg+7GZ41H0xw=="
+        crossorigin="anonymous"></script>
+
+</body>
+
+<footer class="bg-dark text-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Información de contacto: seckq@gmail.com, 1234455, www.uce.com</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p>Derechos de autor © 2023 UCE. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
