@@ -28,8 +28,6 @@ def index():  # put application's code here
     return render_template('index.html')
 
 
-
-
 # @app.route('/camera', methods=['GET', 'POST'])
 # def camera():
 #     i = 0
@@ -121,7 +119,7 @@ prototxtDirectorio = r"resources\deploy.prototxt"
 pesosDirectorio = r"resources\res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtDirectorio, pesosDirectorio)
 
-modeloEmociones = keras.models.load_model('modeloCara100.h5')
+modeloEmociones = keras.models.load_model('modeloCara70.h5')
 
 
 @app.route('/camara', methods=['GET', 'POST'])

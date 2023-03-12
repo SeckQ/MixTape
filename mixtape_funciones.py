@@ -60,6 +60,7 @@ def seleccionar_canciones(sp, uri_top_canciones, animo):
 		todos_datos_canciones = sp.audio_features(canciones)
 		for datos_cancion in todos_datos_canciones:
 			try:
+				# Triste
 				if animo < 0.10:
 					if (0 <= datos_cancion["valence"] <= (animo + 0.15)
 							and datos_cancion["danceability"] <= (animo * 8)
@@ -76,8 +77,8 @@ def seleccionar_canciones(sp, uri_top_canciones, animo):
 				# Neutral
 				elif 0.40 <= animo < 0.60:
 					if ((animo - 0.05) <= datos_cancion["valence"] <= (animo + 0.05)
-							and datos_cancion["danceability"] >= (animo * 1.45)
-							and datos_cancion["energy"] >= (animo * 1.45)):
+							and datos_cancion["danceability"] >= (animo * 1.25)
+							and datos_cancion["energy"] >= (animo * 1.25)):
 						uri_canciones_seleccionadas.append(datos_cancion["uri"])
 				# Feliz
 				elif 0.60 <= animo <= 1:
