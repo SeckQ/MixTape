@@ -251,17 +251,17 @@ def spotify_playlist():
 
 
 @app.route('/templates/botones', methods=['GET', 'POST'])
-def buttons():
+def botones():
     return render_template("botones.html")
 
 
 @app.route('/templates/equipo', methods=['GET', 'POST'])
-def join():
+def equipo():
     return render_template("equipo.html")
 
 
 @app.route('/templates/funciones', methods=['GET', 'POST'])
-def features():
+def funciones():
     return render_template("funciones.html")
 
 
