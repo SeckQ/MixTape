@@ -135,8 +135,8 @@ def camara():
     i = 0
     etiquetas = {}  # Diccionario vacío para guardar etiquetas y sus valores de confianza
 
-    #while (i <= 90):
-    while True:
+    while (i <= 90):
+    #while True:
         ret, frame = cam.read()
         frame = imutils.resize(frame, width=640)
         (locs, preds) = predecir_emocion(frame, faceNet, modeloEmociones)

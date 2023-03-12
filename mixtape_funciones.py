@@ -59,37 +59,6 @@ def seleccionar_canciones(sp, uri_top_canciones, animo):
 	for canciones in list(agrupar(uri_top_canciones, 50)):
 		todos_datos_canciones = sp.audio_features(canciones)
 		for datos_cancion in todos_datos_canciones:
-			# try:
-			# 	if animo < 0.10:
-			# 		if (0 <= datos_cancion["valence"] <= (animo + 0.15)
-			# 		and datos_cancion["danceability"] <= (animo * 8)
-			# 		and datos_cancion["energy"] <= (animo * 10)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
-			# 	elif 0.10 <= animo < 0.25:
-			# 		if ((animo - 0.075) <= datos_cancion["valence"] <= (animo + 0.075)
-			# 		and datos_cancion["danceability"] <= (animo * 4)
-			# 		and datos_cancion["energy"] <= (animo * 5)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
-			# 	elif 0.25 <= animo < 0.50:
-			# 		if ((animo - 0.085) <= datos_cancion["valence"] <= (animo + 0.085)
-			# 		and datos_cancion["danceability"] <= (animo * 3)
-			# 		and datos_cancion["energy"] <= (animo * 3.5)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
-			# 	elif 0.50 <= animo < 0.75:
-			# 		if ((animo - 0.075) <= datos_cancion["valence"] <= (animo + 0.075)
-			# 		and datos_cancion["danceability"] >= (animo / 2.5)
-			# 		and datos_cancion["energy"] >= (animo / 2)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
-			# 	elif 0.75 <= animo < 0.90:
-			# 		if ((animo - 0.075) <= datos_cancion["valence"] <= (animo + 0.075)
-			# 		and datos_cancion["danceability"] >= (animo / 2)
-			# 		and datos_cancion["energy"] >= (animo / 1.75)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
-			# 	elif animo >= 0.90:
-			# 		if ((animo - 0.15) <= datos_cancion["valence"] <= 1
-			# 		and datos_cancion["danceability"] >= (animo / 1.75)
-			# 		and datos_cancion["energy"] >= (animo / 1.5)):
-			# 			uri_canciones_seleccionadas.append(datos_cancion["uri"])
 			try:
 				if animo < 0.10:
 					if (0 <= datos_cancion["valence"] <= (animo + 0.15)
